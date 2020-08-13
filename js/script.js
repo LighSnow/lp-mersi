@@ -201,11 +201,9 @@ document.addEventListener('DOMContentLoaded', function () {
   window.addEventListener('resize', () => {
     mobileSlider();
   });
-  // Кастомный селект
-  // if(document.querySelector('custom-select').classList.contains('custom-select-wrapper')) {
 
-  // }
-  // if (document.querySelector('.custom-select-wrapper').length > 0) {
+
+  // Кастомный селект
   for (const dropdown of document.querySelectorAll(".custom-select-wrapper")) {
     dropdown.addEventListener('click', function () {
       this.querySelector('.custom-select').classList.toggle('open');
@@ -228,44 +226,8 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     }
   })
-  // }
 
-  // Табы
 
-  // const tabCount = 6; // If we add a new tab, increase.
-
-  // const tabClick = (event) => {
-  //     const tabButtonClicked = event.target;
-  //     const id = event.target.dataset.id;
-
-  //     // First remove selected and hide all tabs
-  //     for(let i = 1; i <= tabCount; i++) {
-  //       let tabButtonID = "#tabButton" + i;
-  //       let tabButton = document.querySelector(tabButtonID);
-  //       let tabID = "#" + tabButton.dataset.id;
-  //       let tab = document.querySelector(tabID);
-  //       tabButton.classList.remove("selected");
-  //       tab.classList.add("hidden");
-  //     }
-
-  //     // Now we set selected and show the selected tab.
-  //     document.querySelector("#" + id).classList.remove("hidden");
-  //     tabButtonClicked.classList.add("selected");
-  // };
-
-  // const bindTabs = () => {
-  //   // Loop through number of tabs and add a click event.
-  //   for(let i = 1; i <= tabCount; i++) {
-  //     let tabButtonID = "#tabButton" + i;
-  //     let tabButton = document.querySelector(tabButtonID);
-  //     tabButton.addEventListener('click', tabClick);
-  //   }
-  // };
-
-  // // Belts and braces, lets ensure our DOM is loaded and only assign click to the `tabs`
-  // document.addEventListener('DOMContentLoaded', () => {
-  //   bindTabs();
-  // });
 
   // Табы
   document.querySelectorAll('.tabs-triggers__item').forEach((item) =>
@@ -309,8 +271,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // document.querySelector('.our-vehicle__trigger').click();
 
-  // Swiper
 
+
+
+  // Swiper
   const sliders = document.querySelectorAll('.swiper-container');
 
 
@@ -332,6 +296,8 @@ document.addEventListener('DOMContentLoaded', function () {
       },
     })
   });
+
+
   // Инициализация слайдера
   const sliders1 = document.querySelector('.swiper-container1');
 
@@ -360,6 +326,35 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
+
+  const sliders4 = document.querySelectorAll('.swiper-container4');
+  sliders4.forEach((el) => {
+    let mySwiper2 = new Swiper(el, {
+      slidesPerView: 1,
+      spaceBetween: 13,
+      observer: true,
+      observeParents: true,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+
+      breakpoints: {
+        450: {
+          slidesPerView: 2,
+          spaceBetween: 13,
+        },
+        600: {
+          slidesPerView: 2,
+          spaceBetween: 15,
+        },
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 27,
+        },
+      }
+    });
+  });
 
 
 
